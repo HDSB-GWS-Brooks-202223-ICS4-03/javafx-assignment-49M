@@ -15,11 +15,13 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    //MenuController state = new MenuController();
+    public String gameState = "WordleGame";
 
     @Override
     public void start(Stage stage) throws IOException {
         //Change primary to whatever FXML file you wish to load
-        scene = new Scene(loadFXML("primary"), 640, 480); 
+        scene = new Scene(loadFXML(gameState), 640, 480); 
         stage.setScene(scene);
         stage.show();
     }
