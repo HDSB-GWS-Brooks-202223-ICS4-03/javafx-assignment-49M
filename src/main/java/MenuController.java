@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 
 public class MenuController {
     
-    boolean buttonClick = false;
+    //boolean buttonClick = false;
     App state = new App();
 
     @FXML
@@ -20,20 +20,17 @@ public class MenuController {
     }
 
     @FXML
-    private void buttonIsClicked() {
+    private void buttonIsClicked() throws IOException {
 
-        if (!buttonClick) {
-            title.setText("The Button was clicked");
-            buttonClick = true;
-        } else {
-            title.setText("Wordle Plus");
-            buttonClick = false;
-        }
-        //state.gameState = "WordleGameScreen";
-        //stateChangeToGame("WordleGameScreen");
+        // if (!buttonClick) {
+        //     title.setText("The Button was clicked");
+        //     buttonClick = true;
+        // } else {
+        //     title.setText("Wordle Plus");
+        //     buttonClick = false;
+        // }
+        //  Changes the game state to the actual wordle game
         state.gameState = "WordleGameScreen";
-    }
-    // public String stateChangeToGame(String game){
-    //     return game;
-    // }    
+        App.setRoot(state.gameState);
+    } 
 }
