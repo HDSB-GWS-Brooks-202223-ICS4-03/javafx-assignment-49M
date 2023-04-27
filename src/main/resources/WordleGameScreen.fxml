@@ -39,7 +39,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -72,156 +71,152 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <TextField fx:id="zeroOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;">
-                           <font>
-                              <Font name="Hiragino Sans W8" size="18.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </StackPane>
-                  <TextField fx:id="zeroZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;">
+                  <TextField fx:id="zeroZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="zeroTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2">
+                  <TextField fx:id="zeroTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="zeroThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3">
+                  <TextField fx:id="zeroThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="zeroFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4">
+                  <TextField fx:id="zeroFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="oneZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="1">
+                  <TextField fx:id="oneZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="oneOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="oneOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="oneTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="oneTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="oneThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <TextField fx:id="oneThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="oneFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <TextField fx:id="oneFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="twoZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="2">
+                  <TextField fx:id="twoZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="twoOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextField fx:id="twoOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="twoTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <TextField fx:id="twoTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="twoThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <TextField fx:id="twoThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="twoFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <TextField fx:id="twoFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="threeZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="3">
+                  <TextField fx:id="threeZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="threeOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextField fx:id="threeOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="threeTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <TextField fx:id="threeTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="threeThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <TextField fx:id="threeThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="threeFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <TextField fx:id="threeFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fourZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="4">
+                  <TextField fx:id="fourZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fourOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="fourOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fourTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <TextField fx:id="fourTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fourThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <TextField fx:id="fourThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fourFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <TextField fx:id="fourFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fiveZero" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="5">
+                  <TextField fx:id="fiveZero" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.rowIndex="5">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fiveOne" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <TextField fx:id="fiveOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fiveTwo" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <TextField fx:id="fiveTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fiveThree" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <TextField fx:id="fiveThree" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fiveFour" alignment="CENTER" onKeyPressed="#keyPressed" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                  <TextField fx:id="fiveFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Hiragino Sans W8" size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="zeroOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>

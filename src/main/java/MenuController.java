@@ -16,7 +16,7 @@ public class MenuController {
 
     @FXML
     public void initialize(){
-        System.out.println("The initatize method runs");
+        //  System.out.println("The initatize method runs");
     }
 
     @FXML
