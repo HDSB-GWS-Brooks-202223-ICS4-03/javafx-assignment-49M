@@ -76,6 +76,11 @@
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
                   </TextField>
+                  <TextField fx:id="zeroOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Hiragino Sans W8" size="18.0" />
+                     </font>
+                  </TextField>
                   <TextField fx:id="zeroTwo" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="2">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
@@ -212,11 +217,6 @@
                      </font>
                   </TextField>
                   <TextField fx:id="fiveFour" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="4" GridPane.rowIndex="5">
-                     <font>
-                        <Font name="Hiragino Sans W8" size="18.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="zeroOne" alignment="CENTER" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="46.0" prefWidth="45.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
                      <font>
                         <Font name="Hiragino Sans W8" size="18.0" />
                      </font>
