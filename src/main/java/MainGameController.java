@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.beans.property.ObjectProperty;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -7,13 +6,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class MainGameController {
 
-    public int slot = 0;
-    public boolean nonChar = false; 
-    public boolean firstSlot = true;
+    private int slot = 0;
+    private boolean nonChar = false; 
+    private boolean firstSlot = true;
+    private boolean firstBackSpace = true;
+    private boolean numberInField = false;
 
     @FXML
     TextField zeroZero, zeroOne, zeroTwo, zeroThree, zeroFour, oneZero, oneOne, oneTwo, oneThree, oneFour, twoZero, twoOne, twoTwo,
@@ -30,30 +32,50 @@ public class MainGameController {
         // Get the key that was pressed
         // If the key is a letter, it sets the text of the current TextField to the letter and move to the next TextField
         if(event.getCode().isLetterKey()) {
-            if (!firstSlot){
-                slot++;
-            } else {firstSlot = false;}
-
-            if (!nonChar){
-                //letterSlots[slot].clear();
-                letterSlots[slot].requestFocus();
-            } else {
-                if (slot != 0){
-                    slot--;
+            firstBackSpace = true;
+            if (!numberInField) {
+                if (!firstSlot){
+                    slot++;
+                    if (slot == 30) {
+                        slot = 0;
+                    }
+                    System.out.println("this runs");
+                } else {firstSlot = false;}
+    
+                if (!nonChar){
+                    letterSlots[slot].requestFocus();
+                } else {
+                    if (slot != 0){
+                        slot--;
+                    }
+                    //letterSlots[slot].requestFocus();
+                    nonChar = false;
                 }
-                letterSlots[slot].clear();
-                letterSlots[slot].requestFocus();
-                nonChar = false;
+                System.out.println(letterSlots[slot]);
             }
+
+        } else if(event.getCode() == KeyCode.BACK_SPACE){
+            if (!firstBackSpace && slot > 0) {
+                slot --;
+            } else if (slot > 1){
+                firstBackSpace = false;
+            } 
+            if (slot == 0) {
+                firstSlot = true;
+            }
+            letterSlots[slot].clear();
+            letterSlots[slot].requestFocus();
+            firstSlot = true;
         } else {
             nonChar = true;
-            letterSlots[slot].clear();
+            firstBackSpace = false;
+            numberInField = true;
         }
 
         // If all the text fields have been filled, reset the slot counter to 0
-        if (slot == letterSlots.length - 1) {
-            slot = -1;
-        }
+        // if (slot == letterSlots.length - 1) {
+        //     slot = -1;
+        // }
         System.out.println(slot);
     }
 
@@ -64,6 +86,9 @@ public class MainGameController {
             fiveZero, fiveOne, fiveTwo, fiveThree, fiveFour};
         if (nonChar){
             letterSlots[slot].clear();
+            letterSlots[slot].requestFocus();
+            numberInField = false;
+            firstSlot = false;
         }
     }
 }

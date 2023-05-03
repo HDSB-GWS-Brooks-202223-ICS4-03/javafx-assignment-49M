@@ -41,7 +41,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: beige;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="640.0" style="-fx-background-color: beige;" VBox.vgrow="ALWAYS">
       <children>
         <Label fx:id="title" alignment="CENTER" layoutX="104.0" layoutY="37.0" prefHeight="54.0" prefWidth="443.0" style="-fx-background-color: green; -fx-border-color: black; -fx-border-width: 3;" text="Wordle Plus+" textAlignment="CENTER" textFill="WHITE" wrapText="false">
           <font>
