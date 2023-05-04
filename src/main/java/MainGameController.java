@@ -17,6 +17,8 @@ public class MainGameController {
     private boolean firstBackSpace = true;
     private boolean numberInField = false;
 
+
+
     @FXML
     TextField zeroZero, zeroOne, zeroTwo, zeroThree, zeroFour, oneZero, oneOne, oneTwo, oneThree, oneFour, twoZero, twoOne, twoTwo,
     twoThree, twoFour, threeZero, threeOne, threeTwo, threeThree, threeFour, fourZero, fourOne, fourTwo, fourThree, fourFour,
@@ -52,6 +54,10 @@ public class MainGameController {
                     nonChar = false;
                 }
                 System.out.println(letterSlots[slot]);
+                letterSlots[slot].setTextFormatter(new TextFormatter<>((change) -> {
+                    change.setText(change.getText().toUpperCase());
+                    return change;
+                }));
             }
 
         } else if(event.getCode() == KeyCode.BACK_SPACE){
