@@ -15,11 +15,6 @@ public class MenuController {
     Button clickButton;
 
     @FXML
-    public void initialize(){
-        //  System.out.println("The initatize method runs");
-    }
-
-    @FXML
     private void buttonIsClicked() throws IOException {
 
         // if (!buttonClick) {

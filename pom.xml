@@ -28,6 +28,12 @@
       <artifactId>javafx-fxml</artifactId>
       <version>${javafx.version}</version>
   </dependency>
+  
+    <dependency>
+      <groupId>org.httprpc</groupId>
+      <artifactId>httprpc-client</artifactId>
+      <version>6.6.2</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

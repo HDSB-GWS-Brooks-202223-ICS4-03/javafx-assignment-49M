@@ -1,9 +1,11 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import javafx.beans.property.ObjectProperty;
-import javafx.event.EventHandler;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyCode;
@@ -16,8 +18,34 @@ public class MainGameController {
     private boolean firstSlot = true;
     private boolean firstBackSpace = true;
     private boolean numberInField = false;
+    private String wordleWord;
 
+    // reference used from: https://stackoverflow.com/questions/12028205/randomly-choose-a-word-from-a-text-file#:~:text=To%20get%20the%20words%20use,yourRandom%20%3D%20new%20Random(words.
+    public String readFromFile() throws IOException {
+            BufferedReader reader = new BufferedReader(new FileReader("wordleWordListClean.txt"));
+            String line = reader.readLine();
+            List<String> words = new ArrayList<String>();
+            while(line != null) {
+                String[] wordsLine = line.split(" ");
+                for(String word : wordsLine) {
+                    words.add(word);
+                }
+                line = reader.readLine();
+        }
+         Random rand = new Random(System.currentTimeMillis());
+         String randomWord = words.get(rand.nextInt(words.size()));
+         System.out.println(randomWord);
+         return randomWord;
+    }
 
+    @FXML
+    public  void initialize(){
+        try {
+            wordleWord = readFromFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     TextField zeroZero, zeroOne, zeroTwo, zeroThree, zeroFour, oneZero, oneOne, oneTwo, oneThree, oneFour, twoZero, twoOne, twoTwo,
@@ -50,10 +78,10 @@ public class MainGameController {
                     if (slot != 0){
                         slot--;
                     }
-                    //letterSlots[slot].requestFocus();
                     nonChar = false;
                 }
-                System.out.println(letterSlots[slot]);
+                System.out.println(wordleWord);
+                // reference used from: https://stackoverflow.com/questions/30884812/javafx-textfield-automatically-transform-text-to-uppercase
                 letterSlots[slot].setTextFormatter(new TextFormatter<>((change) -> {
                     change.setText(change.getText().toUpperCase());
                     return change;
