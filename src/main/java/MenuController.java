@@ -16,15 +16,6 @@ public class MenuController {
 
     @FXML
     private void buttonIsClicked() throws IOException {
-
-        // if (!buttonClick) {
-        //     title.setText("The Button was clicked");
-        //     buttonClick = true;
-        // } else {
-        //     title.setText("Wordle Plus");
-        //     buttonClick = false;
-        // }
-        //  Changes the game state to the actual wordle game
         state.gameState = "WordleGameScreen";
         App.setRoot(state.gameState);
     } 
