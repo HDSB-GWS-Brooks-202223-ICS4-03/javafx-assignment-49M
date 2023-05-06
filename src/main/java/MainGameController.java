@@ -180,10 +180,18 @@ public class MainGameController {
                     wordleWord = wordleWord.substring(0, wordleIndex) + "_" + wordleWord.substring(wordleIndex + 1);
                     yellowCheckWordle = yellowCheckWordle.substring(0, wordleIndex) + "_" + yellowCheckWordle.substring(wordleIndex + 1);
                     System.out.println(wordleWord);
-                } else if (yellowCheckWordle.contains(String.valueOf(letterSlots[i].getText()))){
+                } 
+            }
+            wordleIndex = -1;
+            wordleWord = originalWord;
+            for (int i = (slot - 4); i <= slot; i++){
+                wordleIndex++;
+                if (yellowCheckWordle.contains(String.valueOf(letterSlots[i].getText()))){
                     letterSlots[i].setStyle("-fx-background-color: #f1f520");
                     yellowCheckWordle = yellowCheckWordle.substring(0, yellowCheckWordle.indexOf(String.valueOf(letterSlots[i].getText()))) + "_" + yellowCheckWordle.substring(yellowCheckWordle.indexOf(String.valueOf(letterSlots[i].getText())) + 1);
                     System.out.println(yellowCheckWordle);
+                } else if (String.valueOf(letterSlots[i].getText()).equals(String.valueOf(wordleWord.charAt(wordleIndex))) == false) {
+                    letterSlots[i].setStyle("-fx-background-color: #9c9b98");
                 }
             }
             if (correctLetters == 5){
