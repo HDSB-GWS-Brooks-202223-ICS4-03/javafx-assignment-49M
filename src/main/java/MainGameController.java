@@ -27,6 +27,9 @@ public class MainGameController {
     private int correctLetters = 0;
     private String originalWord;
     private String yellowCheckWordle;
+    private List<String> wordList;
+    private boolean validWordCheck;
+    private String typedWord = "";
 
     // reference used from: https://stackoverflow.com/questions/12028205/randomly-choose-a-word-from-a-text-file#:~:text=To%20get%20the%20words%20use,yourRandom%20%3D%20new%20Random(words.
     // This code reads the list of words in the "wordleWordListClean" txt file and then randomly choses a word from the list to save to the randomWord variable
@@ -45,6 +48,7 @@ public class MainGameController {
        String randomWord = words.get(rand.nextInt(words.size()));
        originalWord = randomWord.toUpperCase();
        yellowCheckWordle = randomWord.toUpperCase();
+       wordList = words;
        return randomWord;
             }
     }
@@ -127,7 +131,7 @@ public class MainGameController {
             System.out.println("Backspace"); 
             if (!firstBackSpace && slot != 0 && slot != 5 && slot != 10 && slot != 15 && slot != 20 && slot != 25) {
                 slot --;
-            } else if (slot > 1){
+            } else if (slot >= 1){
                 firstBackSpace = false;
             } 
             if (slot == 0) {
@@ -142,6 +146,7 @@ public class MainGameController {
             }
         } else if (event.getCode() == KeyCode.ENTER && fifthSlot) {
             correctLetters = 0;
+            validWordCheck = true;
             wordCheck = true;
         } else { // this is executed when the pressed key is neither a letter or backspace
             nonChar = true;
@@ -165,14 +170,30 @@ public class MainGameController {
             numberInField = false;
             firstSlot = false;
         }
+        if (validWordCheck) {
+            for (int i = (slot - 4); i <= slot; i++) {
+                typedWord = typedWord + letterSlots[i].getText();
+                System.out.println(typedWord);
+            }
+            if (wordList.contains(typedWord.toLowerCase()) == false) {
+                wordCheck = false;
+                firstSlot = true;
+                fifthSlot = false;
+                for (int k = slot; k >= (slot - 4); k--) {
+                    System.out.println(slot + " " + k);
+                    letterSlots[k].clear();
+                }
+                slot -= 4;
+            }
+            typedWord = "";
+            validWordCheck = false;
+        }
         if (wordCheck) {
-
             for (int i = (slot - 4); i <= slot; i++) {
                 if (wordleIndex < 5){
                     wordleIndex++;
                     System.out.println("runs");
                 }
-                System.out.println("This runs. letter slot: " + i + " wordle slot: " + wordleIndex + " " + String.valueOf(letterSlots[i].getText()) + " " + String.valueOf(wordleWord.charAt(wordleIndex)));
                 if (String.valueOf(letterSlots[i].getText()).equals(String.valueOf(wordleWord.charAt(wordleIndex)))) {
                     letterSlots[i].setStyle("-fx-background-color: #2cd158;");
                     correctLetters++;
