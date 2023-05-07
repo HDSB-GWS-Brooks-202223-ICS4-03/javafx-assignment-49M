@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.KeyCode;
@@ -30,6 +32,8 @@ public class MainGameController {
     private List<String> wordList;
     private boolean validWordCheck;
     private String typedWord = "";
+    private boolean gameOver = false;
+    private boolean clearInvalid;
 
     // reference used from: https://stackoverflow.com/questions/12028205/randomly-choose-a-word-from-a-text-file#:~:text=To%20get%20the%20words%20use,yourRandom%20%3D%20new%20Random(words.
     // This code reads the list of words in the "wordleWordListClean" txt file and then randomly choses a word from the list to save to the randomWord variable
@@ -62,10 +66,29 @@ public class MainGameController {
             e.printStackTrace();
         }
         System.out.println(wordleWord);
+        slot = 0;
+        nonChar = false; 
+        firstSlot = true;
+        firstBackSpace = true;
+        numberInField = false;
+        wordleIndex = -1;
+        fifthSlot = false;
+        fifthCharBackSpace = false;
+        wordCheck = false;
+        typedWord = "";
+        gameOver = false;
+        correctLetters = 0;
+        clearInvalid = false;
     }
 
     @FXML
     AnchorPane screenPane;
+
+    @FXML
+    Label resultStatement;
+
+    @FXML
+    Button replayButton;
 
     @FXML
     //  text field fx:id's
@@ -81,8 +104,10 @@ public class MainGameController {
             twoThree, twoFour, threeZero, threeOne, threeTwo, threeThree, threeFour, fourZero, fourOne, fourTwo, fourThree, fourFour,
             fiveZero, fiveOne, fiveTwo, fiveThree, fiveFour};
             
-        AnchorPane screen = screenPane;    
+        AnchorPane screen = screenPane;  
+        Label result = resultStatement;
 
+        if (!gameOver) {
         // checks if the last text box in the column is activated, if so it doesn't allow further typing into next column until enter is clicked
         if ((slot == 4 || slot == 9 || slot == 14 || slot == 19 || slot == 24 || slot == 29) && !fifthCharBackSpace) {
             fifthSlot = true;
@@ -154,15 +179,21 @@ public class MainGameController {
             numberInField = true;
         }
         System.out.println(slot);
+        if (clearInvalid) {
+            result.setText("");
+        }
+    }
     }
 
     @FXML
     // when the key pressed is released
-    public void keyReleased(KeyEvent event){ 
+    public void keyReleased(KeyEvent event) throws IOException{ 
         TextField[] letterSlots = {zeroZero, zeroOne, zeroTwo, zeroThree, zeroFour, oneZero, oneOne, oneTwo, oneThree, oneFour, twoZero, twoOne, twoTwo,
             twoThree, twoFour, threeZero, threeOne, threeTwo, threeThree, threeFour, fourZero, fourOne, fourTwo, fourThree, fourFour,
             fiveZero, fiveOne, fiveTwo, fiveThree, fiveFour};
-        // AnchorPane screen = screenPane;
+        Label result = resultStatement;
+        Button restart = replayButton;
+        if (!gameOver) {
             // when a non char is typed this clears it because it is invalid
         if (nonChar){
             letterSlots[slot].clear();
@@ -184,6 +215,8 @@ public class MainGameController {
                     letterSlots[k].clear();
                 }
                 slot -= 4;
+                result.setText("Invalid Word");
+                clearInvalid = true;
             }
             typedWord = "";
             validWordCheck = false;
@@ -216,8 +249,13 @@ public class MainGameController {
                 }
             }
             if (correctLetters == 5){
-                System.out.println("You Win!");
+                gameOver = true;
+                result.setText("YOU WON");
             } else {
+                if (slot == 29) {
+                    gameOver = true;
+                    result.setText("Nice Try!   Wordle: " + originalWord);
+                }
                 fifthSlot = false;
                 wordleIndex = -1;
                 wordCheck = false;
@@ -230,6 +268,30 @@ public class MainGameController {
                 correctLetters = 0;
             }
         }
+        if (gameOver) {
+            restart.setStyle("-fx-background-color: #e4fcdc");
+            restart.setText("PLAY AGAIN");
+        }
+    }
+    }
+
+    @FXML
+    private void replayGame() throws IOException {
+        TextField[] letterSlots = {zeroZero, zeroOne, zeroTwo, zeroThree, zeroFour, oneZero, oneOne, oneTwo, oneThree, oneFour, twoZero, twoOne, twoTwo,
+            twoThree, twoFour, threeZero, threeOne, threeTwo, threeThree, threeFour, fourZero, fourOne, fourTwo, fourThree, fourFour,
+            fiveZero, fiveOne, fiveTwo, fiveThree, fiveFour};
+        Label result = resultStatement;
+        Button restart = replayButton;
+        gameOver = false;
+        for (int i = 0; i < 30; i++) {
+            letterSlots[i].clear();
+            letterSlots[i].setStyle("-fx-background-color: white");
+            letterSlots[i].setStyle("-fx-border-color: black");
+        }
+        restart.setStyle("-fx-background-color:  #e0d3a4");
+        restart.setText("");
+        result.setText("");
+        initialize();
     }
 }
 

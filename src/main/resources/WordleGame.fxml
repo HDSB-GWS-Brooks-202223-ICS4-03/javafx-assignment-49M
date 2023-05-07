@@ -45,13 +45,16 @@
       <children>
         <Label fx:id="title" alignment="CENTER" layoutX="104.0" layoutY="37.0" prefHeight="54.0" prefWidth="443.0" style="-fx-background-color: green; -fx-border-color: black; -fx-border-width: 3;" text="Wordle Plus+" textAlignment="CENTER" textFill="WHITE" wrapText="false">
           <font>
-            <Font size="18.0" />
+            <Font size="30.0" />
           </font>
         </Label>
-            <Button fx:id="clickButton" layoutX="288.0" layoutY="314.0" mnemonicParsing="false" onAction="#buttonIsClicked" text="Play Game" />
-            <Text layoutX="161.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To play Wordle, you need to guess a random five-letter word within six attempts. Enter your guess in the box provided and hit enter. Each correct letter in the correct position will be highlighted in green, each correct letter in the wrong position will be highlighted in yellow, and each incorrect letter will be highlighted grey. Use this feedback to refine your guesses and try to guess the word within six attempts. Good luck!" textAlignment="CENTER" wrappingWidth="329.21630859375">
+            <Button fx:id="clickButton" layoutX="261.0" layoutY="139.0" mnemonicParsing="false" onAction="#buttonIsClicked" prefHeight="47.0" prefWidth="129.0" style="-fx-background-color: black;" text="PLAY" textFill="#00ff15">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="25.0" />
+               </font></Button>
+            <Text layoutX="161.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To play Wordle, you need to guess a random five-letter word within six attempts. Enter your guess in the box provided and hit enter. Each correct letter in the correct position will be highlighted in green, each correct letter in the wrong position will be highlighted in yellow, and each incorrect letter will be highlighted grey. Use this feedback to refine your guesses and try to guess the word within six attempts. Good luck!" textAlignment="CENTER" wrappingWidth="329.21630859375">
+               <font>
+                  <Font size="14.0" />
                </font></Text>
       </children>
     </AnchorPane>
