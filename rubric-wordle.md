@@ -4,15 +4,23 @@
 
 ## Mini Reflection
 
-Name: 
+Name: Michal Buczek
 
-I think my program is a level XXX because ...
+I think my program is a level 4+ because all level 3 and 4 requirements are completed. Minimal style Wordle game that is very easy to use, follows OO standards/architecture, user friendly inputs and outputs. Interface is modern, extra features included learned through individual research and libraries, no identical repitition of code, multiple classes used, no bugs and code is affective. 
 
 The extra features I included in my program are: 
 
-<briefly describe your features in dot-jot form>
+- Start screen
+- typing without clicking on text fields
+- All caps without holding shift or caps lock
+- inability to have non alphabetic characters 
+- Only words present in the word list can be tested (no giberish) with invalid word signal 
+- replayability button
 
-
+Overall I am pleased with the end result however, there are some features I would implement with more time. Such features would include; removing the ticking typing signal, 
+make the text fields turn red when a non word is typed, end screen, not just same screen as main game, visual keyboard showing which keys have been pressed, a font option for
+the user, colour theme/background choice, background coffee shop style music and much more. Also, some days I did not make a commit because I was learning the concepts rather
+than implementing significant changes to my code, but next time I will make sure to make a commit every day even if small.
 
 
 ## The Program [KAT]
