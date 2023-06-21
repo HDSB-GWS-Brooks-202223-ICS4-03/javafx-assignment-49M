@@ -63,6 +63,7 @@ public class MainGameController {
        originalWord = randomWord.toUpperCase(); // makes it uppercase
        yellowCheckWordle = randomWord.toUpperCase();
        wordList = words; // list of all the words from the file
+       System.out.println(randomWord);
        return randomWord;
             }
     }
